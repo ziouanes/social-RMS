@@ -80,12 +80,52 @@ namespace social_RMS
             }
         }
 
+        private void select_VERSEMENT_Data()
+        {
+            try
+            {
+
+                //stepProgressBar1.SelectedItemIndex = -1;
+                if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+
+
+
+
+
+                string query = $"select v.id  , v.name_  , v.price , t.total_price, t.type_ from versements v inner join versement_type t on v.id_versement = t.id  inner join  Person p on p.id = v.id_person where p.id  = {lookUpEdit1.EditValue.ToString()} ";
+                versementBindingSource.DataSource = Program.sql_con.Query<versement>(query, commandType: CommandType.Text);
+
+
+
+
+            
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //this.Dispose();
+            }
+        }
+
         private void simpleButton11_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
             run();
             if (lookUpEdit1.ItemIndex != -1)
             {
-                //etude
+                select_VERSEMENT_Data();
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
                 {
@@ -93,7 +133,7 @@ namespace social_RMS
                     SqlCommand cmd = Program.sql_con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = " select  [id1] , envoyer_tresoryer , [validate] from etude where id1  = " + lookUpEdit1.EditValue.ToString() + " ";
+                    cmd.CommandText = " select validateterrain , validateEnregiter , validateLicence from Person where id   =  " + lookUpEdit1.EditValue.ToString() + " ";
 
                     DataTable table = new DataTable();
                     cmd.ExecuteNonQuery();
@@ -101,34 +141,64 @@ namespace social_RMS
                     da.Fill(table);
                     foreach (DataRow row in table.Rows)
                     {
-                        if (int.Parse(row["validate"].ToString()) == -1)
+                       
+
+
+                        
+
+                        //
+                         if (int.Parse(row["validateterrain"].ToString()) == 0)
                         {
                             stepProgressBar1.SelectedItemIndex = 0;
-                            //stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Resources.cancel_48px;
+                            stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.synchronize_40px;
 
 
                         }
-                        else if (int.Parse(row["validate"].ToString()) == 0)
+                         if (int.Parse(row["validateterrain"].ToString()) == 1)
                         {
+
                             stepProgressBar1.SelectedItemIndex = 0;
-                            //stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Resources.synchronize_40px;
-                            // stepProgressBarItem1.ContentBlock2.Description = row["envoyer_tresoryer"].ToString();
+                            stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.checked_40px;
+
+
 
 
                         }
-                        else if (int.Parse(row["validate"].ToString()) == 1)
+                        ///
+                        if (int.Parse(row["validateEnregiter"].ToString()) == 0)
                         {
                             stepProgressBar1.SelectedItemIndex = 1;
-                            //stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Resources.checked_40px;
-
+                            stepProgressBarItem2.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.synchronize_40px;
 
 
                         }
+                        if (int.Parse(row["validateEnregiter"].ToString()) == 1)
+                        {
 
+                            stepProgressBar1.SelectedItemIndex = 1;
+                            stepProgressBarItem2.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.checked_40px;
+
+
+                        }
+                        ////
+                        if (int.Parse(row["validateLicence"].ToString()) == 0)
+                        {
+                            stepProgressBar1.SelectedItemIndex = 2;
+                            stepProgressBarItem3.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.synchronize_40px;
+
+
+                        }
+                        if (int.Parse(row["validateLicence"].ToString()) == 1)
+                        {
+
+                            stepProgressBar1.SelectedItemIndex = 2;
+                            stepProgressBarItem3.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.checked_40px;
+
+
+                        }
 
 
                     }
-
                 }
 
             }

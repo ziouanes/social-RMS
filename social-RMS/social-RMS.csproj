@@ -82,13 +82,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="versements.resx">
       <DependentUpon>versements.cs</DependentUpon>
@@ -98,6 +99,7 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\DataSources\person.datasource" />
+    <None Include="Properties\DataSources\versement.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +114,12 @@
     <PackageReference Include="Dapper">
       <Version>1.50.2</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cancel.svg" />
+    <None Include="Resources\synchronize_40px1.png" />
+    <None Include="Resources\checked_40px1.png" />
+    <Content Include="Resources\icons8_registration_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

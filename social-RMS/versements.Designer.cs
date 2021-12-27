@@ -31,8 +31,8 @@ namespace social_RMS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(versements));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton_ajoute = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.simpleButton_ajoute = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -51,6 +51,16 @@ namespace social_RMS
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(691, 457);
+            this.Root.TextVisible = false;
+            // 
             // simpleButton_ajoute
             // 
             this.simpleButton_ajoute.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_ajoute.ImageOptions.Image")));
@@ -62,16 +72,6 @@ namespace social_RMS
             this.simpleButton_ajoute.TabIndex = 13;
             this.simpleButton_ajoute.Text = "nouveau versement";
             this.simpleButton_ajoute.Visible = false;
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(691, 457);
-            this.Root.TextVisible = false;
             // 
             // layoutControlItem2
             // 
