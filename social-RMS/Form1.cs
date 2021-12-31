@@ -15,6 +15,7 @@ namespace social_RMS
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
+        public int idperson = 0;
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +23,13 @@ namespace social_RMS
         private void Form1_Load(object sender, EventArgs e)
         {
             select_person_Data();
+            lookUpEdit1.Properties.Buttons[1].Click += Worksetude;
+
+        }
+
+        private void Worksetude(object sender, EventArgs e)
+        {
+            updatedata();
 
         }
 
@@ -122,10 +130,15 @@ namespace social_RMS
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
+          updatedata();
+        }
+        public void updatedata()
+        {
             run();
             if (lookUpEdit1.ItemIndex != -1)
             {
                 select_VERSEMENT_Data();
+                idperson = int.Parse(lookUpEdit1.EditValue.ToString());
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
                 {
@@ -141,20 +154,20 @@ namespace social_RMS
                     da.Fill(table);
                     foreach (DataRow row in table.Rows)
                     {
-                       
 
 
-                        
+
+
 
                         //
-                         if (int.Parse(row["validateterrain"].ToString()) == 0)
+                        if (int.Parse(row["validateterrain"].ToString()) == 0)
                         {
                             stepProgressBar1.SelectedItemIndex = 0;
                             stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.synchronize_40px;
 
 
                         }
-                         if (int.Parse(row["validateterrain"].ToString()) == 1)
+                        if (int.Parse(row["validateterrain"].ToString()) == 1)
                         {
 
                             stepProgressBar1.SelectedItemIndex = 0;
@@ -201,6 +214,51 @@ namespace social_RMS
                     }
                 }
 
+            }
+        }
+
+        private void simpleButton_ajoute_Click(object sender, EventArgs e)
+        {
+            versements v1 = new versements(idperson);
+            v1.ShowDialog();
+            updatedata();
+
+
+
+        }
+
+        private void gridControl1_KeyUp(object sender, KeyEventArgs e)
+        {
+            string numero = "";
+            if (e.KeyCode == Keys.Delete)
+            {
+                var row2 = gridView1.FocusedRowHandle;
+
+                numero = gridView1.GetRowCellValue(row2, "id").ToString();
+
+
+
+
+                if (MessageBox.Show("Voulez-vous vraiment supprimer  cette versement ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+
+                    Program.sql_cmd.CommandText = string.Format("delete TOP (1)  from versements where [id] ='{0}' ", numero);
+                    Program.sql_cmd.ExecuteNonQuery();
+
+
+
+
+                    Program.sql_con.Close();
+
+
+
+
+                    ///////////show data to grid  
+                    updatedata();
+
+
+                }
             }
         }
     }
