@@ -63,6 +63,16 @@ namespace social_RMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap cancel_80px {
+            get {
+                object obj = ResourceManager.GetObject("cancel_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap checked_40px {
             get {
                 object obj = ResourceManager.GetObject("checked_40px", resourceCulture);

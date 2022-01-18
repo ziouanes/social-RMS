@@ -160,6 +160,15 @@ namespace social_RMS
 
 
                         //
+                        if (int.Parse(row["validateterrain"].ToString()) == -1)
+                        {
+                            stepProgressBar1.SelectedItemIndex = 0;
+                            stepProgressBarItem1.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.cancel_80px;
+                            stepProgressBarItem2.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.cancel_80px;
+                            stepProgressBarItem3.Options.Indicator.ActiveStateImageOptions.Image = Properties.Resources.cancel_80px;
+
+
+                        }
                         if (int.Parse(row["validateterrain"].ToString()) == 0)
                         {
                             stepProgressBar1.SelectedItemIndex = 0;
@@ -236,7 +245,7 @@ namespace social_RMS
 
                 numero = gridView1.GetRowCellValue(row2, "id").ToString();
 
-
+               // MessageBox.Show(numero);
 
 
                 if (MessageBox.Show("Voulez-vous vraiment supprimer  cette versement ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -260,6 +269,12 @@ namespace social_RMS
 
                 }
             }
+        }
+
+        private void simpleButtonPRINT_Click(object sender, EventArgs e)
+        {
+            form_print _Print = new form_print();
+            _Print.ShowDialog();
         }
     }
 }

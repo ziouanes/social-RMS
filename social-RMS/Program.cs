@@ -41,7 +41,7 @@ namespace social_RMS
             Application.Run(new Form1());
         }
 
-     //   public static SqlConnection sql_con = new SqlConnection("Data Source=hamza;Initial Catalog=dbversement_socialRMS;Integrated Security=True;MultipleActiveResultSets = True;");
+       //   public static SqlConnection sql_con = new SqlConnection("Data Source=hamza;Initial Catalog=dbversement_socialRMS;Integrated Security=True;MultipleActiveResultSets = True;");
 
         //loubna
         public static SqlConnection sql_con = new SqlConnection(@"server =192.168.100.96;database = dbversement_socialRMS ; user id = Login1; password=7895123 ;MultipleActiveResultSets =True;");

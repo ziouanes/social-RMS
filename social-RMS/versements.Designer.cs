@@ -46,10 +46,10 @@ namespace social_RMS
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -66,9 +66,9 @@ namespace social_RMS
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -80,25 +80,24 @@ namespace social_RMS
             this.layoutControl1.Controls.Add(this.lookUpEditverse);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1401, 278);
+            this.layoutControl1.Size = new System.Drawing.Size(934, 172);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(984, 128);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textEdit1.Location = new System.Drawing.Point(661, 81);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(393, 28);
+            this.textEdit1.Size = new System.Drawing.Size(257, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 17;
             // 
             // comboBoxEditetat
             // 
-            this.comboBoxEditetat.Location = new System.Drawing.Point(442, 128);
-            this.comboBoxEditetat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxEditetat.Location = new System.Drawing.Point(300, 81);
             this.comboBoxEditetat.Name = "comboBoxEditetat";
             this.comboBoxEditetat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -108,14 +107,13 @@ namespace social_RMS
             "troisième versement",
             "dernier versement"});
             this.comboBoxEditetat.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEditetat.Size = new System.Drawing.Size(365, 28);
+            this.comboBoxEditetat.Size = new System.Drawing.Size(238, 20);
             this.comboBoxEditetat.StyleController = this.layoutControl1;
             this.comboBoxEditetat.TabIndex = 16;
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(134, 45);
-            this.lookUpEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lookUpEdit1.Location = new System.Drawing.Point(95, 36);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -127,7 +125,7 @@ namespace social_RMS
             this.lookUpEdit1.Properties.DataSource = this.personBindingSource;
             this.lookUpEdit1.Properties.DisplayMember = "name_fr";
             this.lookUpEdit1.Properties.ValueMember = "id";
-            this.lookUpEdit1.Size = new System.Drawing.Size(1243, 28);
+            this.lookUpEdit1.Size = new System.Drawing.Size(823, 20);
             this.lookUpEdit1.StyleController = this.layoutControl1;
             this.lookUpEdit1.TabIndex = 14;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
@@ -135,8 +133,7 @@ namespace social_RMS
             // lookUpEditverse
             // 
             this.lookUpEditverse.Enabled = false;
-            this.lookUpEditverse.Location = new System.Drawing.Point(24, 128);
-            this.lookUpEditverse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lookUpEditverse.Location = new System.Drawing.Point(16, 81);
             this.lookUpEditverse.Name = "lookUpEditverse";
             this.lookUpEditverse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -147,7 +144,7 @@ namespace social_RMS
             this.lookUpEditverse.Properties.NullText = "[EditValue is null]";
             this.lookUpEditverse.Properties.PopupSizeable = true;
             this.lookUpEditverse.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.lookUpEditverse.Size = new System.Drawing.Size(200, 28);
+            this.lookUpEditverse.Size = new System.Drawing.Size(134, 20);
             this.lookUpEditverse.StyleController = this.layoutControl1;
             this.lookUpEditverse.TabIndex = 15;
             // 
@@ -159,7 +156,7 @@ namespace social_RMS
             this.layoutControlGroup1,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1401, 278);
+            this.Root.Size = new System.Drawing.Size(934, 172);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -176,7 +173,7 @@ namespace social_RMS
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1381, 218);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(920, 122);
             this.layoutControlGroup1.Text = "Group";
             // 
             // layoutControlItem1
@@ -184,68 +181,88 @@ namespace social_RMS
             this.layoutControlItem1.Control = this.lookUpEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1357, 32);
+            this.layoutControlItem1.Size = new System.Drawing.Size(904, 22);
             this.layoutControlItem1.Text = "ID :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(107, 21);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 32);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 22);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1357, 51);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(904, 23);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.lookUpEditverse;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 83);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 45);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(204, 32);
+            this.layoutControlItem3.Size = new System.Drawing.Size(136, 22);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 115);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 67);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(1357, 58);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(904, 18);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(787, 83);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(524, 45);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(63, 32);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(42, 22);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.comboBoxEditetat;
-            this.layoutControlItem4.Location = new System.Drawing.Point(308, 83);
+            this.layoutControlItem4.Location = new System.Drawing.Point(205, 45);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(479, 32);
+            this.layoutControlItem4.Size = new System.Drawing.Size(319, 22);
             this.layoutControlItem4.Text = "Versement : ";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(107, 21);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 13);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(204, 83);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(136, 45);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(104, 32);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(69, 22);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(850, 83);
+            this.layoutControlItem5.Location = new System.Drawing.Point(566, 45);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(507, 32);
+            this.layoutControlItem5.Size = new System.Drawing.Size(338, 22);
             this.layoutControlItem5.Text = "Montant payé : ";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(107, 21);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "8476d5dc-48f3-4d8b-bd03-3e8cdf79b658";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("3a0b28d8-ab92-457a-b81f-be625f7a36a8", null, "", "insert success", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(8, 129);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(918, 36);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 18;
+            this.simpleButton1.Text = "nouveau versement";
+            this.simpleButton1.Visible = false;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // personBindingSource
             // 
@@ -254,38 +271,20 @@ namespace social_RMS
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButton1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 218);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 122);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1381, 40);
+            this.layoutControlItem6.Size = new System.Drawing.Size(920, 38);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 230);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1377, 36);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 18;
-            this.simpleButton1.Text = "nouveau versement";
-            this.simpleButton1.Visible = false;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // toastNotificationsManager1
-            // 
-            this.toastNotificationsManager1.ApplicationId = "8476d5dc-48f3-4d8b-bd03-3e8cdf79b658";
-            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("3a0b28d8-ab92-457a-b81f-be625f7a36a8", null, "", "insert success", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
-            // 
             // versements
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1401, 278);
+            this.ClientSize = new System.Drawing.Size(934, 172);
             this.Controls.Add(this.layoutControl1);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("versements.IconOptions.LargeImage")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "versements";
             this.Text = "versements";
             this.Load += new System.EventHandler(this.versements_Load);
@@ -305,9 +304,9 @@ namespace social_RMS
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
