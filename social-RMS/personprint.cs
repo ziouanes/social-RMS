@@ -15,7 +15,41 @@ namespace social_RMS
         public int validateterrain { get; set; }
         public int validateEnregiter { get; set; }
         public int validateLicence { get; set; }
-        public int annulation { get; set; }
+        private string _id_versement;
+        public string id_versement
+        {
+            get
+            {
+                return _id_versement;
+            }
+            set
+            {
+                
+                if (value == "3")
+                {
+                    _id_versement = "achat de terrain :";
+                }
+                else if (value == "4")
+                {
+                    _id_versement = "Enregistrement : ";
+                }
+                else if (value == "5")
+                {
+                    _id_versement = "autorisation : ";
+
+                }
+                
+            }
+
+
+
+
+        }
+
+        public int sum_group_price { get; set; }
+        
+
+
 
 
     }

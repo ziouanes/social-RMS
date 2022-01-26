@@ -28,7 +28,7 @@ namespace social_RMS
         {
             if (Program.sql_con.State == ConnectionState.Closed)
                 Program.sql_con.Open();
-            string query = $" select * from person ";
+            string query = $" select p.id ,  p.name_fr , p.name_ar ,p.cne, p.validateterrain , p.validateEnregiter , p.validateLicence , v.id_versement ,    sum(v.price) as 'sum_group_price'     from person  p inner join versements v on p.id = v.id_person group by  p.id, p.name_fr ,p.name_ar, p.cne,  v.id_versement ,  p.validateterrain , p.validateEnregiter , p.validateLicence ";
             List<personprint> persons = Program.sql_con.Query<personprint>(query, commandType: CommandType.Text).ToList();
             using (XtraFormprint frm = new XtraFormprint())
             {
@@ -44,7 +44,7 @@ namespace social_RMS
 
             if (Program.sql_con.State == ConnectionState.Closed)
                 Program.sql_con.Open();
-            string query = $" select * from person  WHERE validateterrain = 1 and validateEnregiter = 1 and validateLicence = 1 ";
+            string query = $" select p.id ,  p.name_fr , p.name_ar ,p.cne, p.validateterrain , p.validateEnregiter , p.validateLicence , v.id_versement ,    sum(v.price) as 'sum_group_price'     from person  p inner join versements v on p.id = v.id_person where p.validateterrain = 1 and p.validateEnregiter = 1 and p.validateLicence = 1 group by  p.id, p.name_fr ,p.name_ar, p.cne,  v.id_versement ,  p.validateterrain , p.validateEnregiter , p.validateLicence ";
             List<personprint> persons = Program.sql_con.Query<personprint>(query, commandType: CommandType.Text).ToList();
             using (XtraFormprint frm = new XtraFormprint())
             {
@@ -59,7 +59,7 @@ namespace social_RMS
         {
             if (Program.sql_con.State == ConnectionState.Closed)
                 Program.sql_con.Open();
-            string query = $" select * from person  WHERE validateterrain != 1 OR validateEnregiter != 1 OR validateLicence != 1 ";
+            string query = $" select p.id ,  p.name_fr , p.name_ar ,p.cne, p.validateterrain , p.validateEnregiter , p.validateLicence , v.id_versement ,    sum(v.price) as 'sum_group_price'     from person  p inner join versements v on p.id = v.id_person where p.validateterrain != 1 or p.validateEnregiter != 1 or p.validateLicence != 1 group by  p.id, p.name_fr ,p.name_ar, p.cne,  v.id_versement ,  p.validateterrain , p.validateEnregiter , p.validateLicence  ";
             List<personprint> persons = Program.sql_con.Query<personprint>(query, commandType: CommandType.Text).ToList();
             using (XtraFormprint frm = new XtraFormprint())
             {
